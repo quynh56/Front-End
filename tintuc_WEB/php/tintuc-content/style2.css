@@ -1,0 +1,103 @@
+.baiviet{
+    padding:20px 50px;
+    width:70%;
+    height:auto;
+    margin:200px 200px  10px 200px;
+    background:white;
+}
+/*.baiviet .nav{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: lightgray;
+
+}*/
+.baiviet .nav li{
+    display:inline-block;
+    margin:5px;
+    padding:10px;
+    font-size:15px;
+    list-style:none;
+
+}
+.baiviet .nav a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+.baiviet .baiviet-child{
+    width:65%;
+}
+.baiviet .baiviet-child .baiviet-sub{
+    margin:0;
+    padding:0;
+}
+.baiviet .baiviet-child .baiviet-sub h1{
+    font-weight:bold;
+    padding-top:10px;
+}
+.baiviet .baiviet-child .baiviet-sub .time{
+    margin-left:7px;
+}
+.baiviet .baiviet-child .baiviet-sub .time p{
+    color:#777;
+    font-size:13px;
+   font-family: "Times New Roman",sans-serif;
+    padding:15px;
+    float:left;
+    margin-right:80px;
+}
+.baiviet .baiviet-child .baiviet-sub .time p span{
+    color:orangered;
+}
+.baiviet .baiviet-child .baiviet-sub .time p i{
+    float:left;
+    padding:3px 7px;
+}
+
+.baiviet .baiviet-child .baiviet-sub .button .button-child{
+    background:darkblue;
+    padding:5px 10px;
+    font-size:17px;
+    width:110px;
+    margin:10px;
+    float:left;
+    border-radius:5px;
+}
+.baiviet .baiviet-child .baiviet-sub .button  a{
+    text-decoration:none;
+    color:white;
+    padding:5px 10px
+}
+.baiviet .baiviet-child .baiviet-sub .button .right{
+    float:right;
+    margin:10px ;
+    background:black;
+    padding:5px 4px;
+    font-size:17px;
+    width:50px;
+    border-radius:5px;
+}
+.baiviet .baiviet-child .baiviet-sub .button{
+    border-bottom:1px dotted #d9d9d9;
+    height:130px;
+    width:700px
+}
+.baiviet .baiviet-sub-2{
+    margin:10px 30px;
+    font-size:15px;
+}
+.baiviet .baiviet-sub-2 h4{
+    font-weight:bold;
+    font-size:18px;
+    padding:20px 0;
+}
+.baiviet .baiviet-sub-2 li{
+    padding-bottom: 10px;
+}
+.baiviet .baiviet-sub-2 a{
+    color:black;
+    text-decoration: none;
+}
+.baiviet .baiviet-sub-2 ul{
+    border-bottom:1px dotted #d9d9d9;
+}
