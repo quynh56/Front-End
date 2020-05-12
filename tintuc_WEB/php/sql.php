@@ -8,7 +8,7 @@ echo"ket noi khong thanh cong ".mysqli_error($conn)."<br>";
 }
 $sql ="CREATE DATABASE IF NOT EXISTS web";
 if(mysqli_query($conn,$sql)){
-    echo "ket noi web thanh cong"."<br>";
+    echo "ket noi thanh cong"."<br>";
 }else{
     echo "co loi xay ra".mysqli_error($conn)."<br>";
 }
@@ -27,41 +27,16 @@ id int(20) primary key not null auto_increment,
 tintuc_name varchar(300),
 tintuc_menu varchar(200),
 tintuc_content text,
-tintuc_image text
+tintuc_image text,
 )";
 if(mysqli_query($conn,$sql)){
-    echo "tao column thanh cong"."<br>";
+    echo "tao thanh cong"."<br>";
 }else{
     echo "co loi xay ra".mysqli_error($conn)."<br>";
+    mysqli_close($conn);
+    unset($sql);
 }
-mysqli_close($conn);
-unset($sql);
 ?>
-
-
-<!--infor-->
-<?php
-$conn = mysqli_connect("localhost","root","","web");
-if(mysqli_errno($conn)){
-    echo "kết nối không thành công".mysqli_error($conn)."<br>";
-}else{
-    echo "kết nối thành công"."<br>";
-}
-$sql = "CREATE TABLE IF NOT EXISTS y_kien (id int(20) primary key not null auto_increment, name VARCHAR(30) ,
- email VARCHAR(50), 
- usrtel INT,
- message VARCHAR(200))";
-if(mysqli_query($conn,$sql)){
-    echo "kết nối form thành công"."<br>";
-}else{
-    echo "có lỗi xảy ra".mysqli_error($conn)."<br>";
-}
-mysqli_close($conn);
-unset($sql);
-?>
-
-
-
 <?php
 $conn = mysqli_connect("localhost","root","","web");
 mysqli_query ($conn,"SET NAMES UTF8");
@@ -75,7 +50,7 @@ if(!$result) {
 
 while($row = mysqli_fetch_array($result)){
     echo '
-            <div class="row">
+            <div class="row"> 
                 <div class="child col">
                      <a href=""><img src="' . $row['tintuc_image'] . '" alt="">
                          <h4>' . $row['tintuc_name'] . '</h4>
@@ -89,7 +64,7 @@ while($row = mysqli_fetch_array($result)){
                      <p>' . $row['tintuc_content'] . '</p>
                   </div>
             </div>';
-    echo '
+    echo ' 
             <div class="child-3">
                 <a href=""><img src="' . $row['tintuc_image'] . '" alt="">
                     <h4>' . $row['tintuc_name'] . '</h4>
@@ -97,7 +72,7 @@ while($row = mysqli_fetch_array($result)){
                  <p>' . $row['tintuc_content'] . '</p>
             </div>';
     echo '<hr>';
-    echo '
+    echo '   
             <div class="child-3">
                 <a href="">
                     <img src='.$row['tintuc_image'].' title="Lịch sử AFF Cup ủng hộ Việt Nam: Philippines sở hữu thành tích toàn thua ở bán kết">
@@ -105,7 +80,7 @@ while($row = mysqli_fetch_array($result)){
                 </a>
                 <p>'.$row['tintuc_content'].'</p>
             </div>';
-    echo '
+    echo '   
             <div class="child-3">
                 <a href="">
                     <img src='.$row['tintuc_image'].' title="Lịch sử AFF Cup ủng hộ Việt Nam: Philippines sở hữu thành tích toàn thua ở bán kết">
@@ -113,7 +88,7 @@ while($row = mysqli_fetch_array($result)){
                 </a>
                 <p>'.$row['tintuc_content'].'</p>
             </div>';
-    echo '
+    echo '   
             <div class="child-3">
                 <a href=' . $row['id'] . '>
                     <img src='.$row['tintuc_image'].' title="Lịch sử AFF Cup ủng hộ Việt Nam: Philippines sở hữu thành tích toàn thua ở bán kết">
@@ -121,7 +96,7 @@ while($row = mysqli_fetch_array($result)){
                 </a>
                 <p>'.$row['tintuc_content'].'</p>
             </div>';
-    echo '
+    echo '   
             <div class="child-3">
                 <a href=' . $row['id'] . '>
                     <img src='.$row['tintuc_image'].' title="Lịch sử AFF Cup ủng hộ Việt Nam: Philippines sở hữu thành tích toàn thua ở bán kết">

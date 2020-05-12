@@ -1,7 +1,42 @@
 
+<?php
+$conn = mysqli_connect("localhost","root","");
+if(mysqli_errno($conn)){
+    echo "kết nối không thành công".mysqli_error($conn) ."<br>";
+}else{
+    echo "kết nối thành công"."<br>";
+}
+$sql = "CREATE DATABASE IF NOT EXISTS form";
+if(mysqli_query($conn,$sql)){
+    echo "tạo thành công CSDL"."<br>";
+}else{
+    echo "có lỗi xảy ra".mysqli_error($conn)."<br>";
+}
+mysqli_close($conn);
+unset($sql);
+?>
 
 <?php
-$conn = mysqli_connect("localhost","root","","web");
+$conn = mysqli_connect("localhost","root","","form");
+if(mysqli_errno($conn)){
+    echo "kết nối không thành công".mysqli_error($conn)."<br>";
+}else{
+    echo "kết nối thành công"."<br>";
+}
+$sql = "CREATE TABLE IF NOT EXISTS y_kien (id int(20) primary key not null auto_increment, name VARCHAR(30) , email VARCHAR(50), usrtel INT,
+ message VARCHAR(200))";
+if(mysqli_query($conn,$sql)){
+    echo "thành công"."<br>";
+}else{
+    echo "có lỗi xảy ra".mysqli_error($conn)."<br>";
+}
+mysqli_close($conn);
+unset($sql);
+?>
+
+
+<?php
+$conn = mysqli_connect("localhost","root","","form");
 if(mysqli_errno($conn)){
     echo "kết nối không thành công".mysqli_error($conn)."<br>";
 }else{

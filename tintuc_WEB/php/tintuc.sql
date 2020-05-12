@@ -1,12 +1,12 @@
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF  EXISTS `tintuc`;
 CREATE TABLE `tintuc`(
-`id` int(20) unsigned NOT NULL AUTO_INCREMENT,
+
+PRIMARY KEY (`id`)`id` int(20) unsigned NOT NULL AUTO_INCREMENT,
 `tintuc_name` varchar(300) DEFAULT NULL,
 `tintuc_menu` varchar(200) DEFAULT NULL,
 `tintuc_content` text,
 `tintuc_image` text,
-PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 INSERT INTO `tintuc` VALUES ('1','Sài Gòn sau bão số 9: Phố đi bộ thành phố bơi lội, nhà dân hóa bể sinh vât cảnh đủ loại cá, gián và rắt rết','xã hội','Sau cơn bão số 9 đã qua nhưng những hậu quả mà nó để lại vẫn đang khiến người dân TP.HCM phải căng mình chống chọi','../image/baoso9.jpg');
 INSERT INTO `tintuc` VALUES ('2','Những quán cafe và khu tổ hợp xinh xắn khiến bạn muốn bất chấp book vé Đà Nẵng ngay','đời sống','Đà Nẵng chưa bao giờ thiếu những không gian xinh xắn và lung linh đâu nhé','../image/cafevuon.jpg');
