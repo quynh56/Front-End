@@ -94,7 +94,7 @@
             </ul>
         </div>
        <!-- <div class="banner-left">
-            <marquee direction="up" scrolldelay="50" scrollamount="10">
+            <!--<marquee direction="up" scrolldelay="50" scrollamount="10">
 
             </marquee>
             <a href="#"><img src="../../image/cuchoami.jpg" alt="Quảng cáo"></a>

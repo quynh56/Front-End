@@ -8,125 +8,83 @@
     <title>Document</title>
 </head>
 <body>
-<?php include("header.php");?>
-<div class="bai-viet">
-    <?php
-    $conn = mysqli_connect("localhost","root","","web");
-    mysqli_query ($conn,"SET NAMES UTF8");
-    $sql ="SELECT DISTINCT * FROM tintuc LIMIT 0,14 ";
-    $result = mysqli_query($conn,$sql);
+<?php include("header.php"); ?>
 
-    if(!$result) {
+<div class="bai-viet">
+
+    <div class="row">
+        <?php
+        $conn = mysqli_connect("localhost", "root", "", "web");
+        mysqli_query($conn, "SET NAMES UTF8");
+        $sql = "SELECT * FROM tintuc LIMIT 0,2 ";
+        $result = mysqli_query($conn, $sql);
+
+        if (!$result) {
+            die ("không thực hiện được:" . mysqli_error($conn));
+            exit();
+        }
+
+        while ($row = mysqli_fetch_array($result)) {
+            ?>
+            <div class="child col">
+                <a href='tintuc-content/thongtin.php ?id=<?php echo $row['id'];?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
+                    <h4> <?php echo $row['tintuc_name']; ?></h4>
+                </a>
+                <p><?php echo $row['tintuc_content']; ?></p>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+    <?php
+    $sql = "SELECT * FROM tintuc LIMIT 2,4 ";
+    $result = mysqli_query($conn, $sql);
+
+    if (!$result) {
         die ("không thực hiện được:" . mysqli_error($conn));
         exit();
     }
 
-    while($row = mysqli_fetch_array($result)){
-    ?>
-    <div class="row">
-        <div class="child col">
-            <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
+    while ($row = mysqli_fetch_array($result)) {
+        ?>
+        <div class="child-3">
+
+            <a href='tintuc-content/thongtin.php?id=<?php echo $row['id'];?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
                 <h4> <?php echo $row['tintuc_name']; ?></h4>
             </a>
             <p><?php echo $row['tintuc_content']; ?></p>
         </div>
-        <div class="child-2 col">
-            <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                <h4> <?php echo $row['tintuc_name']; ?></h4>
-            </a>
-            <p><?php echo $row['tintuc_content']; ?></p>
-        </div>
-    </div>
-
-    <div class="child-3">
-        <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-            <h4> <?php echo $row['tintuc_name']; ?></h4>
-        </a>
-        <p><?php echo $row['tintuc_content']; ?></p>
-    </div>
-    <hr>
-
-    <div class="child-3">
-        <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-            <h4> <?php echo $row['tintuc_name']; ?></h4>
-        </a>
-        <p><?php echo $row['tintuc_content']; ?></p>
-    </div>
-    <hr>
-
-    <div class="child-3">
-        <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-            <h4> <?php echo $row['tintuc_name']; ?></h4>
-        </a>
-        <p><?php echo $row['tintuc_content']; ?></p>
-    </div>
-    <hr>
-
-    <div class="child-3">
-        <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-            <h4> <?php echo $row['tintuc_name']; ?></h4>
-        </a>
-        <p><?php echo $row['tintuc_content']; ?></p>
-    </div>
-    <hr>
-
-    <div class="child-3">
-        <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-            <h4> <?php echo $row['tintuc_name']; ?></h4>
-        </a>
-        <p><?php echo $row['tintuc_content']; ?></p>
-    </div>
-    <hr>
-    <div>
-        <div class="owl-carousel owl-theme">
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href='<?php echo $row['id']; ?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
-                    <h4> <?php echo $row['tintuc_name']; ?></h4>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <?php
+        <hr>
+        <?php
     }
     ?>
-<?php include("footer.php");?>
+    <div>
+        <div class="owl-carousel owl-theme">
+            <?php
+            $sql = "SELECT * FROM tintuc LIMIT 6,7 ";
+            $result = mysqli_query($conn, $sql);
+
+            if (!$result) {
+                die ("không thực hiện được:" . mysqli_error($conn));
+                exit();
+            }
+
+            while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="item">
+
+                    <a href='tintuc-content/thongtin.php?id=<?php echo $row['id'];?>'><img src='<?php echo $row['tintuc_image']; ?>' alt="">
+                        <h4> <?php echo $row['tintuc_name']; ?></h4>
+                    </a>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+
+<?php include("footer.php"); ?>
 </body>
 </html>
-

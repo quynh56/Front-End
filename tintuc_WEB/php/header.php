@@ -1,3 +1,8 @@
+<?php
+$conn = new mysqli("localhost","root","","web")
+or die ("ket noi that bai");
+mysqli_query($conn,"set names utf8");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +32,7 @@
 </head>
 </head>
 <body>
+
 <div id="container" >
     <div id=header>
         <div class="banner">
@@ -93,6 +99,7 @@
                     </ul>
                 </li>
                 <li><a href="kinhdoanh.php">Kinh Doanh</a></li>
+                <li><a href="">thoi trang</a></li>
             </ul>
         </div>
         <div class="banner-left">

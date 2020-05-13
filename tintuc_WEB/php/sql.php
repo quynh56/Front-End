@@ -1,43 +1,5 @@
 
 <?php
-$conn =mysqli_connect("localhost","root","");
-if(mysqli_errno($conn)){
-echo"ket noi khong thanh cong ".mysqli_error($conn)."<br>";
-}else{
-    echo "ket noi thanh cong "."<br>";
-}
-$sql ="CREATE DATABASE IF NOT EXISTS web";
-if(mysqli_query($conn,$sql)){
-    echo "ket noi thanh cong"."<br>";
-}else{
-    echo "co loi xay ra".mysqli_error($conn)."<br>";
-}
-mysqli_close($conn);
-unset($sql);
-?>
-<?php
-$conn =mysqli_connect("localhost","root","","web");
-if(mysqli_errno($conn)){
-    echo "ket noi khong thanh cong ".mysqli_error($conn)."<br>";
-}else{
-    echo "ket noi thanh cong "."<br>";
-}
-$sql = "CREATE TABLE IF NOT EXISTS tintuc(
-id int(20) primary key not null auto_increment,
-tintuc_name varchar(300),
-tintuc_menu varchar(200),
-tintuc_content text,
-tintuc_image text,
-)";
-if(mysqli_query($conn,$sql)){
-    echo "tao thanh cong"."<br>";
-}else{
-    echo "co loi xay ra".mysqli_error($conn)."<br>";
-    mysqli_close($conn);
-    unset($sql);
-}
-?>
-<?php
 $conn = mysqli_connect("localhost","root","","web");
 mysqli_query ($conn,"SET NAMES UTF8");
 $sql ="SELECT* FROM tintuc LIMIT 0,14 ";

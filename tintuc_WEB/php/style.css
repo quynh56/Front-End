@@ -20,7 +20,6 @@ body{
 	height: 150px;
 	float: left;
 	width:1600px;
-	/*background-image: linear-gradient(to right,#ffc8d4,#ff94ab,#ffdce1) ;*/
 	background: #83d385;
 }
 #header .banner .logo img{
@@ -77,39 +76,14 @@ body{
 	overflow:hidden;
 	box-sizing:border-box;
 }
-/*#content .menu ul{
-    position:absolute;
-    margin:0;
-    list-style:none;
-    font-size:17px;
-}
-#content li{
-    display:inline-block;
-    padding:5px 10px;
-    position:relative;
-}
-#content li:hover >ul{
-    display: block;
-}
-#content ul ul{
-    position:absolute;
-    display:none;
-    z-index: 2;
-    margin:0;
-    padding: 5px 10px;
-}
-#content ul ul li{
-    display:block;
-}*/
 #content .menu {
-    /*background: #C30F2B;*/
+
     background:black;
     text-align: center;
     cursor: pointer;
     opacity:0.8;
     z-index:3;
-    /*position:fixed;
-    top:0;*/
+    width:1600px;
 }
 #content .menu ul{
     margin: 0;
@@ -128,9 +102,6 @@ body{
     color: white;
 
 }
-/*#content .menu li a,ul{
-    position:relative;
-}*/
 #content .menu li:hover{
     background:orangered;
 
@@ -218,7 +189,6 @@ body{
 }
 
 #footer .custom{
-    float:right;
     width:280px;
     border-style:solid;
     border-width:1px 1px 0;
@@ -227,8 +197,6 @@ body{
     position:fixed;
     bottom:0;
     background:#f6f7f8;
-    right:0;
-
 }
 #footer  button{
     background:red;

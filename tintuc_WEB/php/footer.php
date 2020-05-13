@@ -22,7 +22,7 @@
         <button id="hien"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Đóng góp ý kiến</button>
         <div class="form">
 
-            <form action="info.php" method="POST">
+            <form action="" method="POST">
                 <label>Nhập thông tin của bạn</label>
                 <input type="text" name="name" placeholder="Nhập tên của bạn"  >
                 <input type="email" name="email" placeholder="Nhập email của bạn"  >
@@ -31,6 +31,64 @@
                 <textarea name="message"  cols="30" rows="7"></textarea>
                 <input type="submit" value="submit">
             </form>
+
+
+
+            <?php
+            $conn = mysqli_connect("localhost","root","","web");
+            if(mysqli_errno($conn)){
+                /* echo "kết nối không thành công".mysqli_error($conn)."<br>";
+             }else{
+                 echo "kết nối thành công"."<br>";
+             */}
+            $sql = "CREATE TABLE IF NOT EXISTS y_kien (id int(20) primary key not null auto_increment, name VARCHAR(30) , email VARCHAR(50), usrtel INT,
+ message VARCHAR(200))";
+            if(mysqli_query($conn,$sql)){
+                /*  echo "thành công"."<br>";
+              }else{
+                  echo "có lỗi xảy ra".mysqli_error($conn)."<br>";
+              */}
+            mysqli_close($conn);
+            unset($sql);
+            ?>
+
+
+            <?php
+            $conn = mysqli_connect("localhost","root","","web");
+            if(mysqli_errno($conn)){
+                /* echo "kết nối không thành công".mysqli_error($conn)."<br>";
+             }else{
+                 echo "kết nối thành công"."<br>";
+             */}
+            $name ="";
+            $email="";
+            $message="";
+            $usrtel="";
+            if($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST["name"])) {
+                    $name = $_POST["name"];
+                }
+                if (isset($_POST["email"])) {
+                    $email = $_POST["email"];
+                }
+                if (isset($_POST["usrtel"])) {
+                    $usrtel = $_POST["usrtel"];
+                }
+                if (isset($_POST["message"])) {
+                    $message = $_POST["message"];
+                }
+
+                $sql = "INSERT INTO y_kien ( name, email, usrtel, message) VALUES('$name','$email','$usrtel','$message')";
+                if (mysqli_query($conn, $sql)) {
+                    echo "gửi thành công"."<br>";
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn)."<br>";
+                }
+            }
+            mysqli_close($conn);
+            unset($sql);
+            ?>
+
         </div>
     </div>
 
